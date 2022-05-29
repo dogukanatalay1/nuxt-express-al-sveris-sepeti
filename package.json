@@ -1,0 +1,24 @@
+{
+  "name": "9-express-js-kullanarak-session-ile-alisveris-sepeti-yapimi",
+  "version": "1.0.0",
+  "description": "My neat Nuxt.js project",
+  "author": "Gökhan Kandemir",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
