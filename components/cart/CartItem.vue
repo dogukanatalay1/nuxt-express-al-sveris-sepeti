@@ -36,6 +36,7 @@
     </td>
   </tr>
 </template>
+
 <script>
 export default {
   computed: {

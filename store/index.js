@@ -7,6 +7,7 @@ const createStore = () => {
       cart: [],
       totalPrice: 0.0
     },
+
     mutations: {
       setProducts(state, products) {
         state.products = products
@@ -18,6 +19,7 @@ const createStore = () => {
         state.totalPrice = totalPrice
       },
     },
+
     actions: {
       nuxtServerInit(vuexContext, context) {
         return context.$axios.get("/")
@@ -55,6 +57,7 @@ const createStore = () => {
           })
       }
     },
+
     getters: {
       getProducts(state) {
         return state.products
@@ -70,3 +73,7 @@ const createStore = () => {
 }
 
 export default createStore
+
+
+
+

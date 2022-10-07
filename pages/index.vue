@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3 class="text-center mt-3">Nuxt.js | Express.js | Session Kullanımı</h3>
+    <h3 class="title text-center mt-3">Bordo Ticaret</h3>
     <div class="d-flex pt-3 justify-content-center" style="height: 100%">
       <Products :products="products" />
       <Cart :cart="cart" />
@@ -25,6 +25,11 @@ export default {
 </script>
 
 <style>
+
+.title{
+  font-size: 40px;
+}
+
 .product-container,
 .cart-container {
   padding: 1em;
@@ -37,7 +42,7 @@ body {
   background-color: #faf3df;
 }
 .price-container {
-  background-color: #d15385 !important;
+  background-color: blue !important;
   font-size: 12px;
 }
 .total-price-container {

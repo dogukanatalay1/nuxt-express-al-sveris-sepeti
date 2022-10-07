@@ -9,6 +9,7 @@
     <CartFooter />
   </div>
 </template>
+
 <script>
 import Alert from "@/components/cart/Alert";
 import CartItems from "@/components/cart/CartItems";

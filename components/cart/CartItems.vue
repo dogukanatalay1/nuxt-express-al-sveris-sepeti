@@ -12,6 +12,7 @@
     </tbody>
   </table>
 </template>
+
 <script>
 import CartItem from "@/components/cart/CartItem";
 export default {

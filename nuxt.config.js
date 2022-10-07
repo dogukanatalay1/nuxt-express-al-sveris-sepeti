@@ -63,8 +63,13 @@ module.exports = {
       
     }
   },
+
+
   serverMiddleware: [
     bodyParser.json(),
     "~/api"
   ]
+
+
+  
 }

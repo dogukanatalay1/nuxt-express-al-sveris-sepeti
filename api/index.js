@@ -3,7 +3,7 @@ const session = require("express-session")
 const app = express()
 
 app.use(session({
-  secret: "k4b105uzk3d1"
+  secret: "doguSoftware"
 }))
 
 app.get("/", (req, res) => {
@@ -20,14 +20,41 @@ app.get("/", (req, res) => {
 
   console.log("Ürünler gönderildi...")
   res.status(200).json({
-    products: [
-      { id: 1, title: "Keçi Peyniri", price: 10 },
-      { id: 2, title: "Sele Zeytin", price: 15 },
-      { id: 3, title: "Petek Balı", price: 40 },
-      { id: 4, title: "Vişne Reçeli", price: 5 },
-      { id: 5, title: "Danet Kangal Sucuk", price: 17 },
-      { id: 6, title: "Kaymak", price: 20 },
-      { id: 7, title: "Zeytin Ezmesi", price: 8 },
+    products: [{
+      id: 1,
+      title: "Keçi Peyniri",
+      price: 10
+    },
+    {
+      id: 2,
+      title: "Sele Zeytin",
+      price: 15.25
+    },
+    {
+      id: 3,
+      title: "Petek Balı",
+      price: 40
+    },
+    {
+      id: 4,
+      title: "Vişne Reçeli",
+      price: 5
+    },
+    {
+      id: 5,
+      title: "Danet Kangal Sucuk",
+      price: 17
+    },
+    {
+      id: 6,
+      title: "Kaymak",
+      price: 20
+    },
+    {
+      id: 7,
+      title: "Zeytin Ezmesi",
+      price: 8
+    },
     ],
     cart: {
       items: cart,
@@ -41,14 +68,11 @@ app.post("/add-to-cart", (req, res) => {
   let product = req.body.product
 
   let cart = []
-  // req.session.title = "Gökhan Kandemir"
   if (req.session.cart) {
-    console.log("Session Bulundu!!!")
     cart = req.session.cart
   }
 
   if (cart.length > 0) {
-    console.log("Sepet Bulundu!!!")
     let itemIndex = cart.findIndex(item => item.id == product.id)
     if (itemIndex > -1) {
       cart[itemIndex].count += product.count
@@ -66,12 +90,10 @@ app.post("/add-to-cart", (req, res) => {
     })
   }
 
-  // TotalPrice...
   let cartTotalPrice = 0.0
   cart.forEach(item => {
     cartTotalPrice += item.totalPrice
   })
-
 
   req.session.cart = cart
 
@@ -86,14 +108,12 @@ app.post("/add-to-cart", (req, res) => {
 app.post("/change-count", (req, res) => {
   let product = req.body.product
   let cart = []
-  // req.session.title = "Gökhan Kandemir"
   if (req.session.cart) {
-    console.log("Session Bulundu!!!")
     cart = req.session.cart
   }
 
   if (cart.length > 0) {
-    console.log("Sepet Bulundu!!!")
+    console.log('session found!!')
     let itemIndex = cart.findIndex(item => item.id == product.id)
     if (itemIndex > -1) {
       cart[itemIndex].count = product.count
@@ -134,12 +154,10 @@ app.post("/remove-product", (req, res) => {
     req.session.cart = cart
   }
 
-  // TotalPrice...
   let cartTotalPrice = 0.0
   cart.forEach(item => {
     cartTotalPrice += item.totalPrice
   })
-
 
   req.session.cart = cart
 
@@ -156,3 +174,6 @@ module.exports = {
   path: "/api",
   handler: app
 }
+
+
+
